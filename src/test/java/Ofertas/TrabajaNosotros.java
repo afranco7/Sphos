@@ -28,11 +28,17 @@ public class TrabajaNosotros {
         String nombre ="";
         String fecha ="";
         String descripcion ="";
+        int i=0;
 
         for (WebElement oferta: ofertas) {
+            i++;
             nombre = oferta.findElement(By.cssSelector("div.premium-blog-entry-container>h3>a")).getText();
             fecha = oferta.findElement(By.cssSelector("div.premium-blog-entry-container>div>span>span")).getText();
             descripcion = oferta.findElement(By.cssSelector(".premium-blog-post-content")).getText();
+
+            System.out.println("Nombre oferta " +i +":"+ nombre);
+            System.out.println("fecha oferta " +i +":"+ fecha);
+            System.out.println("descripcion oferta " +i +":"+ descripcion);
         }
     }
 }
